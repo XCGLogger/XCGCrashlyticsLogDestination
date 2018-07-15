@@ -1,6 +1,6 @@
-#XCGCrashlyticsLogDestination
+# XCGCrashlyticsLogDestination
 
-###CocoaPods
+### CocoaPods
 Add pre-install hook:
 
 ```
@@ -14,21 +14,21 @@ and
 pod 'XCGCrashlyticsLogDestination'
 ```
 
-###What inside
-####`XCGCrashlyticsLogDestination`
+### What inside
+#### `XCGCrashlyticsLogDestination`
 1. Writes your log into [Crashlytics custom logs](https://docs.fabric.io/apple/crashlytics/enhanced-reports.html#custom-logs).
 
 2. Can automatically convert your `.Severe` log to [Crashlytics non-fatal errors](https://docs.fabric.io/apple/crashlytics/logged-errors.html) (if you wish, ofcourse).
 
-####`XCGLogger` extension
+#### `XCGLogger` extension
 1. `error` and `severe` methods supports `NSError`.
 2. `nonFatalError` method, that will pass yours `String` or `NSError` to Crashlytics non-fatal errors, without `XCGCrashlyticsLogDestination`.
 
-###Usage
+### Usage
 ```swift
 let log = XCGLoger(...
 ```
-####`XCGCrashlyticsLogDestination`
+#### `XCGCrashlyticsLogDestination`
 Send all `severe` logs to Crashlytics as non-fatal erors, and attach log to all errors, if they are occured:
 
 ```swift
@@ -43,9 +43,9 @@ log.addLogDestination(crashlyticsDestination)
 log.info("Yours message")
 ```
 
-######Note: `XCGCrashlyticsLogDestination` object overwrites `Crashlytics.sharedInstance().delegate` on initialization to get crash report for last execution. It's better to have only one instance of `XCGCrashlyticsLogDestination`.
+###### Note: `XCGCrashlyticsLogDestination` object overwrites `Crashlytics.sharedInstance().delegate` on initialization to get crash report for last execution. It's better to have only one instance of `XCGCrashlyticsLogDestination`.
 
-####`XCGLogger` extension
+#### `XCGLogger` extension
 Log an occured `NSError`, and send it to Crashlytics:
 
 ```swift
@@ -84,7 +84,7 @@ log.severe {
 ```
 
 
-###References
+### References
 
 You can find more info on XCGLogger/Crashlytics (documentation and setup) here:
 
